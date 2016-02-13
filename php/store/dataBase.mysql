@@ -1,0 +1,24 @@
+create schema if not exists sale_ayan;
+use sale_ayan;
+create table if not exists boss(name char(23) not null, surname char(23) not null,email char(31) not null,password char(41) not null, primary key(email));
+create table if not exists client(name char(23) not null, surname char(23) not null,email char(31) not null,password char(41) not null, primary key(email));
+insert ignore into boss value('Ayan','Urban','a1y3a1n7@gmail.com',PASSWORD('ayani'));
+insert ignore into client value('Alejandra','Rios','alizita@gmail.com',PASSWORD('alizita'));
+
+
+create table if not exists product(barcode char(18) not null,saleType char(18) not null,name char(27) not null,buyPrice float not null,salePrice float not null,description text,expiration date,routeImage text,primary key(barcode,expiration));
+
+
+
+
+
+
+
+create table if not exists section(name char(27) not null,description text,routeImage text,primary key(name));
+create table if not exists product_in_section(barcode char(18) not null,section char(27) not null, primary key(barcode),foreign key(barcode) references product(barcode) on update cascade on delete cascade, foreign key(section) references section(name) on update cascade on delete cascade);
+create table if not exists inventary(barcode char(18) not null,amountMinimal int not null,inStock int not null,primary key(barcode), foreign key(barcode) references product(barcode) on update cascade on delete cascade);
+
+
+create table if not exists salesEmployer(socialSecurityNumber char(18) not null,barcode char(18) not null,dateSale date not null,amountSaled int not null,primary key(socialSecurityNumber,barcode,dateSale),foreign key(socialSecurityNumber) references employer(socialSecurityNumber) on update cascade on delete cascade, foreign key(barcode) references product(barcode) on update cascade on delete cascade);
+create table if not exists salesBoss(socialSecurityNumber char(18) not null,barcode char(18) not null,dateSale date not null,amountSaled int not null,primary key(socialSecurityNumber,barcode,dateSale),foreign key(socialSecurityNumber) references boss(socialSecurityNumber) on update cascade on delete cascade, foreign key(barcode) references product(barcode) on update cascade on delete cascade);
+insert ignore into section value('Sin Seccion',null,null);

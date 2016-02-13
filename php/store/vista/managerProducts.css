@@ -1,0 +1,14 @@
+#box{
+	background:#f0f0f0;
+	width=700px;
+	border:1px solid red;
+	border-radius:17px;
+	margin:auto;
+}
+body{
+	background:#d0d0d0;
+}
+a:hover{
+	background:#ffffff;
+	font-size:31px;
+}

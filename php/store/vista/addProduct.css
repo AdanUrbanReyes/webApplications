@@ -1,0 +1,11 @@
+#addProduct{
+	background:#f0f0f0;
+	width=700px;
+	border:1px solid red;	
+	border-radius:17px;
+	margin:200px auto;
+	font-size:31px;	
+}
+body{
+	background:#E9CACA;
+}

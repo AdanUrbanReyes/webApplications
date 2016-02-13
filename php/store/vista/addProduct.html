@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--https://developer.mozilla.org/es/docs/Web/HTML/Elemento/input-->
+<!--http://geeks.ms/blogs/etomas/archive/2012/12/12/html5-apis-upload-de-ficheros-con-ajax-file-api-y-progress-api.aspx-->
+<!--http://geeks.ms/blogs/etomas/archive/2012/12/14/html5-apis-crea-tu-propio-instagram.aspx-->
+<!---->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="addProduct.css">
+		<title>Add Product</title>
+		<script type="text/javascript">
+			function yesExpiration(){
+				document.getElementById('expiration').attributes.removeNamedItem("hidden");	
+			}
+			function noExpiration(){
+				var attributeHIDDEN=document.createAttribute("hidden");
+				document.getElementById('expiration').attributes.setNamedItem(attributeHIDDEN);
+			}
+			function loadImage(e){
+/*				if (e.target.files.length > 0) {
+					alert (""+e.target.files[0]);
+					//subirFichero(e.target.files[0]);
+				}
+*/
+			}
+		</script>
+	</head>
+	<body>
+		<form action="../controlador/AddProduct.php" method="post" enctype="multipart/form-data">
+			<div id="addProduct">
+				<center>
+					Barcode:<input type="text" name="barcode"/><br>
+					Sale Type:<select name="saleType">
+								<option value="pieces">Pieces</option>
+								<option value="liters">Liters</option>
+								<option value="weight">Weight</option>
+								</select><br>
+					Name:<input type="text" name="name"/><br>
+					Buy Price:<input type="text" name="buyPrice"/><br>
+					Sale Price:<input type="text" name="salePrice"/><br>
+					Description:<textarea name="description"></textarea><br>
+					Have Expiration?: <input type="radio" name="haveExpiration" value="yes" checked onclick="yesExpiration()"/>yes
+					<input type="radio" name="haveExpiration" value="no" onclick="noExpiration()"/>no<br>
+					<p id="expiration">Expiration: <input type="date" name="expiration" value="year/month/day"/></p>
+					Image: <input type="file" value="select image" name="image"/><br>
+		<!--<input id="routeFile" type="file" value="select image" name="image" onchange="loadImage(this.files)"/>-->
+					Stock: <input type="number" value="1" name="stock"/><br/>
+					<input type="submit" name="addProduct" value="add"/><br>
+					<input type="reset" value="reset"/><br>
+				</center>
+			</div>
+		</form>
+	</body>
+</html>

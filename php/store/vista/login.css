@@ -1,0 +1,39 @@
+#box{
+	background:#f0f0f0;/*color fondo dela caja*/
+	width:700px;/*ancho de la caja*/
+	border:1px solid red;
+	border-radius:17px;/*redondea las equinas*/
+	margin:200px auto;/*centra la caja*/
+}
+body{
+	background:#E9CACA;/*color fondo del body*/
+}
+h1,h2,h3,h4{
+	font-family:arial;/*tipo de letra*/
+	color:#0080ff;/*color de letra*/
+}
+select{
+	color:red;
+	font-size:17px;	
+}
+input[type=text],[type=password]{/*se refiere solo alas cajas de texto <input type="text">*/
+	font-size:31px;
+	margin: 7px;
+	width:300px;
+	height:30px;
+	border:1px solid red;
+	border-radius:7px;
+}
+input[type=submit],[type=reset]{
+	border:none;
+	border-radius:3px;
+	background:#0080ff;
+	font-family: arial black;
+	font-size:17px;
+	color:white;
+	text-decoration:none;
+}
+input[type=submit]:hover,form a:hover,[type=reset]:hover,form a:hover{
+	background:#0040ff;
+	cursor:pointer;
+}

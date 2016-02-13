@@ -1,0 +1,12 @@
+body{
+	background:#f0f0f0;
+	font-size:31px;
+}
+a:hover{
+	background:#d0d0d0;
+}
+#welcome{
+	position:relative;
+	top:0px;
+	left:700px;
+}

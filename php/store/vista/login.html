@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="login.css">
+		<title>Login</title>
+	</head>
+	<body>
+		<form action="../controlador/Login.php" method="post">
+			<div id="box">
+				<center>
+					<h1>Welcome to Store Ayan<br>Please enter fields</h1><br>
+					Type User:<select name="typeUser">
+						<option value="Boss">Boss</option>
+						<option value="Client">Client</option>
+					</select><br>
+					User: <input type="text" name="user" /><br>
+					Password: <input type="password" name="password"/><br>
+					<input type="submit" name="login" value="login"/>
+					<input type="reset" value="reset"/><br>
+					<a href="register.html">register</a>
+				</center>
+			</div>
+		</form>
+	</body>
+</html>

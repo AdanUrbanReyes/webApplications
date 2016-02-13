@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>remove product</title>
+		<script type="text/javascript">
+			function yesExpiration(){
+				document.getElementById('expiration').attributes.removeNamedItem('hidden');
+			}
+			function noExpiration(){
+				var attributeHIDDEN=document.createAttribute('hidden');
+				document.getElementById('expiration').attributes.setNamedItem(attributeHIDDEN);	
+			}
+		</script>
+	</head>
+	<body>
+		<form action="../controlador/RemoveProduct.php" method="post">
+			barcode: <input type="text" name="barcode"/><br>
+			have Expiration? <input type="radio" name="haveExpiration" value="yes" onclick="yesExpiration()" checked/>yes
+			<input type="radio" name="haveExpiration" value="no" onclick="noExpiration()"/>no<br>
+			<p id="expiration">Expiration: <input type="text" name="expiration" value="year/month/day"></p>
+			<input type="submit" name="removeProduct" value="remove"/>
+			<input type="reset" value="reset"/><br>
+		</form>
+	</body>
+</html>
